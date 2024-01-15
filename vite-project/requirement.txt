@@ -1,0 +1,15 @@
+npm create vite@latest vite-project
+docker init
+The Above command asks for:-
+1)What application platform does your project use? Node
+2)What version of Node do you want to use? (18.13.0)
+3) Which package manager do you want to use? npm
+4)Do you want to run "npm run build" before starting your server? No
+5)What command do you want to use to start the app? npm run dev
+6) What port does your server listen on? 5173
+this creates 4 new files as:- .dockerignore Dockerfile compose.yaml README.Docker.md
+
+after this we have to change the compose.yaml file to from server to web and can remove the environment variables
+then after adding the volumes parameters we write in cmd as :-
+docker compose up
+similarly we have to add:- "dev": "vite --host",   in package.json
