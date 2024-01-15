@@ -1,0 +1,18 @@
+docker build -t react-docker .
+docker run react-docker
+// port mappping:- docker run -p 5173:5173 react-docker
+and in package.json we do:- "dev": "vite --host",
+
+docker ps will list down the images running
+
+to stop it we do:- docker stop <id that you want to stop>
+and to delete the containers also we do:- docker container prune
+and to forcefully stop it:- docker rm <id that you want to stop> --force
+
+docker run -p 5173:5173  -v "$(pwd):/app"  -v /app/node_modules react-docker to make any changes in runtime like nodemon 
+
+
+++++++++++++++PUBLISH IN DOCKER WORLD +++++++++++++++++
+docker login
+docker tag react-docker <your username in docker signed in account>/react-docker
+docker push <your username in docker signed in account>/react-docker
