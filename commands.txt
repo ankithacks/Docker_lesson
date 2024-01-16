@@ -16,3 +16,9 @@ docker run -p 5173:5173  -v "$(pwd):/app"  -v /app/node_modules react-docker to 
 docker login
 docker tag react-docker <your username in docker signed in account>/react-docker
 docker push <your username in docker signed in account>/react-docker
+
+
+# do build the image we write:- docker build -t youtube-nodejs .
+# to run the image we do:- docker run -it -p 8000:8000 youtube-nodejs
+# to execute in terminal we write:- docker exec -it <id of the image you want to run> bash 
+# for the environment variables we do:- docker run -it -e PORT=4000 -p 4000:4000 youtube-nodejs
